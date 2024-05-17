@@ -79,18 +79,45 @@ app.post('/signin',(req,res)=>{
 })
 app.put('/update',(req,res)=>{
     //update the username
+    const newUsername = req.body.name;
     //check the data is correct or not
+    if(newUsername == undefined){
+        return res.status(400).json({
+            message:"name is required"
+        })
+    }
     //check if user exists or not
+    const user = users.find(user => user.email == req.body.email);
     // change the name 
+    user.name = newUsername;
     // sends back the response
+    return res.status(200).json({
+        message: "user updated sucessfully"
+    })
 })
 
 app.delete('/delete',(req,res)=>{
     //check the data is correct or not
+    if(req.body.email == undefined){
+        return res.status(400).json({
+            message:"email is required"
+        })
+    }
     //check if the user is present or not
+    const user = users.find(user => user.email == req.body.email);
     // check if the password is correct or not
+    if(user.password !== req.body.password){
+        return res.status(400).json({
+            message:"password does not match"
+        })
+    }
     // deletes the user from data base
+    users = users.filter(user => user.email !== req.body.email);
+    
     // sends back the response
+    return res.status(200).json({
+        message: "user deleted sucessfully"
+    })
 })
 
 app.listen(3000,()=>{

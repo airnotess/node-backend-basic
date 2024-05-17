@@ -16,6 +16,7 @@ app.use will parse a function as a middleware
 
 status codes are different values which client understand as different types of responses 
 
+
 2XX good
 3XX creating updating
 4XX errors
@@ -25,6 +26,13 @@ status codes are different values which client understand as different types of 
 # Assignment
 
 what is status code and what are different status code means??
+
+status codes indicates whether a specific  HTTP request has been successfully completed or not
+100 -> information responses
+200 -> successful responses
+300 -> redirection responses
+400 -> client error 
+500 -> server error
 
 
 ## Users Routes
