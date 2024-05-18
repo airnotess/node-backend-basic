@@ -41,3 +41,22 @@ what is status code and what are different status code means??
 2. middlewares , cors, jsonwebtoken
 3. authentication 
 4. todo application
+
+
+##  things to teach 
+
+1. what is mongodb 
+2. how to connect to mongodb
+
+```js
+    npm install mongoose
+```
+
+3. what is schema
+4. creating normal user schema
+5. changing the routes to save the data on databases
+6. adding password hashing
+### authentication using jwt + localstorage 
+7. explain about tokens
+8. explain about middlewares
+9. what is cors , how to set cors 
